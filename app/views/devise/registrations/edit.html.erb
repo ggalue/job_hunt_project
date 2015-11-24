@@ -18,6 +18,11 @@
     <%= f.text_field :location, placeholder: "Location" %>
   </div>
 
+  <div class="field">
+    <strong>Upload Image: </strong>
+    <%=f.file_field :avatar %><br>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
