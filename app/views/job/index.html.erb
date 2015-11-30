@@ -1,36 +1,36 @@
-<h1>Search Jobs</h1>
 
-<div class="row">
-	<div class="col-md-4">
-		<div class="well">
-			<h3>Search for:</h3>
-			<%= form_tag(search_job_path, method: "get") do %>
-			<%= text_field_tag(:q) %>
-			<%= submit_tag("Search") %>
-			<% end %>
-			<h3>Search by location:</h3>
-			<%= form_tag(search_job_path, method: "get") do %>
-			<%= text_field_tag(:l) %>
-			<%= submit_tag("Search") %>
-			<% end %>
-			<span id=indeed_at><a href="http://www.indeed.com/">jobs</a> by <a href="http://www.indeed.com/" title="Job Search"><img src="http://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;" alt="Indeed job search"></a></span>
+<h1 id="title"><strong>Search Jobs</strong></h1>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="well">
+				<h3>Search for:</h3>
+				<%= form_tag(search_job_path, method: "get") do %>
+				<%= text_field_tag :q, nil, placeholder: "Job" %><br />
+				<%= text_field_tag :l, nil, placeholder: "Location" %><br />
+				<%= select_tag :jt, options_for_select(@job_type), :prompt => "Please select" %><br />
+				<%= submit_tag("Search") %>
+				<% end %>
+
+				<span id=indeed_at><a href="http://www.indeed.com/">jobs</a> by <a href="http://www.indeed.com/" title="Job Search"><img src="http://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;" alt="Indeed job search"></a></span>
+			</div>
+			<p id="height"></p>
 		</div>
+	<div class="col-md-8">
+	<ul>
+		<% @results.each do |job| %>
+			<div>
+				<p><strong><%= job.job_title %></strong></p>
+				<p><%= job.company %></p>
+				<p><%= job.formatted_location %></p>
+				<p><%= job.formatted_relative_time %></p>
+				<p><%= job.snippet %></p>
+				<p>
+					<%= link_to "View Listing", job.url, target: "_blank", class: "btn btn-sm btn-info" %>
+					<%= link_to "Save Job", saved_jobs_path, class: "btn btn-sm btn-success" %>
+				</p>
+			</div>
+		<hr>
+		<% end %>
+	</ul>
 	</div>
-<div class="col-md-8">
-<ul>
-	<% @results.each do |job| %>
-		<div>
-			<p><strong><%= job.job_title %></strong></p>
-			<p><%= job.company %></p>
-			<p><%= job.formatted_location %></p>
-			<p><%= job.snippet %></p>
-			<p>
-				<%= link_to "View Listing", job.url, target: "_blank", class: "btn btn-sm btn-info" %>
-				<a href="#" class="btn btn-sm btn-success">Save Job</a>
-			</p>
-		</div>
-	<hr>
-	<% end %>
-</ul>
-</div>
-</div>
+	</div>

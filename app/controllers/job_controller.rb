@@ -9,6 +9,13 @@ class JobController < ApplicationController
 		else
 			@jobs = []
 			@results = []
-		end 
+		end
+
+		@job_type = %w(Full-time Part-time Contract Internship Temporary)
+		@job_type.sort! 
   end
+
+  def saved_jobs
+  end 
+
 end

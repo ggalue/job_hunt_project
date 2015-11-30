@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'search_job' => 'job#index'
 
+  get 'saved_jobs' => 'job#saved_jobs'
+
   get 'show_user' => 'welcome#show_user'
 
   # The priority is based upon order of creation: first created -> highest priority.

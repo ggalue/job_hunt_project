@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
 
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit({ roles: [] }, :email, :password, :password_confirmation, 
-      :name, :location, :avatar) }
+      :name, :location, :avatar, :saved_jobs) }
 
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, 
-      :current_password, :name, :location, :avatar) }
+      :current_password, :name, :location, :avatar, :saved_jobs) }
 
   end
 end 
