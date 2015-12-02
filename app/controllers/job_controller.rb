@@ -35,6 +35,7 @@ class JobController < ApplicationController
 
   def show
   	@job = Job.find(params[:id])
+  	@note = Note.new
   end 
 
   def destroy

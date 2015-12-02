@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-7">
 			<table>
 				<tbody>
 					<tr>
@@ -20,11 +20,27 @@
 			</div>
 		</table>
 	</div>
+	<div class="col-md-4">
+		<div class="well" id="left">
+			<h3>Notes</h3>
+				<%= render 'notes/form' %>
+			</p>
+				</div>
+	</div>
 </div>
 
-<div class="container">
-	<p id="height"></p>
+<div class="row">
+	<% @job.notes.each do |note| %>
+	<div class="col-md-4">
+		<div class="well">
+		<p><%= note.name %></p>
+		<p><%= note.comment %></p>
+		<p><%= note.date %></p>
+		<p><%= note.status %></p>
+		<%= link_to 'Edit', edit_note_path(note) %>
+	</div>
 </div>
-
-
+<% end %>
+</div>
+		
 

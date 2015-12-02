@@ -1,1 +1,1 @@
-IndeedAPI.publisher_id = '5433973895079768'
+IndeedAPI.publisher_id = ENV["INDEED_API_KEY"]
