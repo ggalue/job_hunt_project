@@ -1,0 +1,37 @@
+<h1 id="title"><strong>Your Saved Jobs</strong></h1>
+<h4 id="title">Your recently saved jobs are listed below. Click "View Listing" to make notes.</h4>
+&nbsp
+
+  <% @my_jobs.each do |job| %>
+  <div class="col-md-12">                            
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>
+        	<h4><%= job.job_title %></h4>
+        	<h5><%= job.company %> - <%= job.location %></h5>
+        </td>
+        <td>
+        	<%= link_to 'View Listing', show_path(id: job.id), class: "btn btn-sm btn-info" %>
+        	<%= link_to 'Delete Job', destroy_path(id: job.id), data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+    </div>
+  </table>
+
+<div class="container">
+  <p id="height"></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+

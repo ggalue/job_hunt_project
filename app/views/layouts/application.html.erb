@@ -24,20 +24,53 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
       <%= link_to "JobHunt", root_path, class: "navbar-brand" %>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "How Does It Work", about_path %></li>
-        <li><%= link_to "Search Jobs", search_job_path %></a></li>
+        <li>
+          <%= link_to root_path do %>
+          <span class="fa fa-home fa-fw"></span>Home
+          <% end %>
+        </li>
+        <li>
+          <%= link_to about_path do %>
+          <span class="fa fa-book fa-fw"></span>How Does It Work
+          <% end %>
+        </li>
+        <li>
+          <%= link_to search_job_path do %>
+          <span class="fa fa-search fa-fw"></span>Search Jobs
+          <% end %>
+        </li>
         <% if user_signed_in? %>
          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-fw"></i>Your Account<span class="fa fa-caret-down"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Profile", show_user_path(current_user) %></a></li>
+            <li>
+              <%= link_to show_user_path(current_user) do %>
+              <span class="fa fa-user fa-fw"></span>Profile
+              <% end %>
+            </li>
              <% if user_signed_in? %>
-             <li><%= link_to "Saved Jobs", saved_jobs_path%></li>
-             <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
-             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+             <li>
+              <%= link_to dashboard_path do %>
+              <span class="fa fa-align-justify fa-fw"></span>Dashboard
+              <% end %>
+            </li>
+             <li>
+              <%= link_to edit_user_registration_path do %>
+              <span class="fa fa-pencil fa-fw"></span>Edit Profile
+              <% end %>
+            </li>
+             <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="fa fa-sign-out fa-fw"></span>Sign Out
+              <% end %>
+            </li>
              <% end %>
              <% else %>
-             <li><%= link_to "Sign In", new_user_session_path %></li>
+             <li>
+              <%= link_to new_user_session_path do %>
+              <span class="fa fa-sign-in fa-fw"></span>Sign In
+              <% end %>
+            </li>
              <%end%>
            </ul>
       </ul>

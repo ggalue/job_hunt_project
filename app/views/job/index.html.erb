@@ -22,11 +22,12 @@
 				<p><strong><%= job.job_title %></strong></p>
 				<p><%= job.company %></p>
 				<p><%= job.formatted_location %></p>
+				<p><%= job.date.strftime("%m-%d-%Y") %></p>
 				<p><%= job.formatted_relative_time %></p>
 				<p><%= job.snippet %></p>
 				<p>
 					<%= link_to "View Listing", job.url, target: "_blank", class: "btn btn-sm btn-info" %>
-					<%= link_to "Save Job", saved_jobs_path, class: "btn btn-sm btn-success" %>
+					<%= link_to "Save Job", create_path(q: job.job_title, as_cmp: job.company, l: job.formatted_location, s: job.snippet, url: job.url, date: job.date), class: "btn btn-sm btn-success" %>
 				</p>
 			</div>
 		<hr>

@@ -9,9 +9,15 @@ Rails.application.routes.draw do
 
   get 'search_job' => 'job#index'
 
-  get 'saved_jobs' => 'job#saved_jobs'
+  get 'dashboard' => 'job#dashboard'
 
   get 'show_user' => 'welcome#show_user'
+
+  get 'create' => 'job#create'
+
+  get 'show' => 'job#show'
+
+  get 'destroy' => 'job#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

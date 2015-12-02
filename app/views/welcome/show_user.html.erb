@@ -1,5 +1,49 @@
-<h1>Profile</h1>
-
-<%= image_tag @user.avatar.url(:thumb) %>
-<h3><%= @user.name %></h3>
-<h4><%= @user.location %></h4>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="col-md-12 lead"><h1><strong>Profile</strong></h1><hr></div>
+          <div class="panel-body">
+            <div class="row">
+            </div>
+            <div class="row">
+              <style>
+              .user-profile-pic {
+                background: url(<%= @user.avatar.url %>) no-repeat center center;
+                background-size: cover;
+                height: 328px;
+              }
+              </style>
+              <div class="col-md-4 user-profile-pic">
+                <%#= image_tag @user.avatar.url(:medium) %>
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-12 text-left">
+                    <ul class="list-group">
+                      <li class="list-group-item"><h3 class="only-bottom-margin"><%= @user.name %></h3></li>
+                      <li class="list-group-item"><h3></span><%= @user.email %></h3><br></li>
+                      <li class="list-group-item"><h3><%= @user.location %></h3></li>
+                      <li class="list-group-item"><h3><small>Joined: <%= @user.created_at.strftime("%m-%d-%Y") %></h3></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <%=link_to search_job_path do %>
+                <button class="btn btn-default"><i class="fa fa-search fa-fw"></i> Search Jobs</button>
+                <% end %>
+                <%=link_to edit_user_registration_path do %>
+                <button class="btn btn-default pull-right"><i class="fa fa-pencil fa-fw"></i> Edit Profile</button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
