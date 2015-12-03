@@ -6,13 +6,17 @@
 	padding-left: 20px;
 }
 
-.well {
+#align-left {
 	font-family: 'Ubuntu', sans-serif;
 	margin-left: 20px;
 }
 
 #height {
 	height: 400px;
+}
+
+.table-hover {
+	font-family: 'Ubuntu', sans-serif;
 }
 
 h1 {
@@ -22,4 +26,11 @@ h1 {
 #left {
 	margin-top: 30px;
 }
+
+#center-it {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
 

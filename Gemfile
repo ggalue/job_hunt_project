@@ -27,6 +27,7 @@ gem 'figaro'
 
 gem 'simple_form'
 
+gem 'omniauth-facebook'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

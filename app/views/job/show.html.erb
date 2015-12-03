@@ -1,16 +1,23 @@
+
 <div class="row">
 	<div class="col-md-7">
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<h3 id="title"><%= @job.job_title %></h3>
+								&nbsp
+							<h3 id="title">Did you apply for a job and can't remember if you sent a follow-up email or not? Make notes related to your job application process on the left hand side after your apply! You can edit and delete notes at anytime.</h3>
+								&nbsp
+							<h3 id="title"><strong><%= @job.job_title %></strong></h3>
 							<h4 id="title"><%= @job.company %> - <%= @job.location %></h4>
-							<p id="title"><%= @job.description %></p>
-							<p id="title">Posted On: <%= @job.date.strftime("%m-%d-%Y") %></p>
-							<p id="title">
-							<%= link_to "View Listing on Indeed.com", @job.url, target: "_blank", class: "btn btn-default" %>
-						</p>
+							&nbsp
+							<p id="title"><%= @job.description %>...</p>
+							&nbsp
+							<h4 id="title">Posted On: <%= @job.date.strftime("%m-%d-%Y") %></h4>
+							&nbsp
+							<h4 id="title">
+							<%= link_to "View Listing on Indeed.com", @job.url, target: "_blank" %>
+						</h4>
 							<p id="title">
 								<span id=indeed_at><a href="http://www.indeed.com/">jobs</a> by <a href="http://www.indeed.com/" title="Job Search"><img src="http://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;" alt="Indeed job search"></a></span>
 							</p>
@@ -29,6 +36,7 @@
 	</div>
 </div>
 
+<div class="container" id="center-it">
 <div class="row">
 	<% @job.notes.each do |note| %>
 	<div class="col-md-4">
@@ -47,5 +55,7 @@
 </div>
 <% end %>
 </div>
+</div>
+
 		
 

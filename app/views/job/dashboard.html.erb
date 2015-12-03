@@ -1,13 +1,15 @@
-<h1 id="title"><strong>Saved Jobs</strong></h1>
+<h1 id="title"><strong>Dashboard</strong></h1>
 <h4 id="title">Your recently saved jobs are listed below. Click "View Listing" to make notes on a specific job post.</h4>
 &nbsp
+
+<p>
   <% @my_jobs.each do |job| %>
-  <div class="col-md-10">                            
+  <div class="col-md-10 col-md-offset-1">                            
   <table class="table table-hover">
     <tbody>
       <tr>
         <td>
-        	<h4><%= job.job_title %></h4>
+        	<h4><strong><%= job.job_title %></strong></h4>
         	<h5><%= job.company %> - <%= job.location %></h5>
         </td>
         <td class="pull-right">
@@ -23,6 +25,7 @@
     </tbody>
   </table>
 </div>
+</p>
 
 <div class="container">
   <p id="height"></p>
