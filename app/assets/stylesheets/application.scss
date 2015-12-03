@@ -18,31 +18,33 @@
  @import 'bootstrap';
  @import 'font-awesome';
 
-.navbar-default {
+.navbar-inverse {
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #464B4D;
-	font: #FCFCFC;
 	border-bottom: 7px solid #5CD6A3;
 	width: 100%;
 	padding: 1em 0;
 	margin-bottom: 0px;
-	color: #FFF;
-}
-
-.navbar-header {
-	font-family: 'Ubuntu', sans-serif;
-	color: #FFF;
+	color: #FFF !important;
 }
 
 .navbar-brand {
 	font-size: 25px;
+	color: #FFF !important;
+}
+
+.navbar-right {
+	color: #FFF !important;
 }
 
 .footer {
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #464B4D;
 	color: white;
-	padding: 1em 0;
+}
+
+#id {
+	margin-left: 20px;
 }
 
 

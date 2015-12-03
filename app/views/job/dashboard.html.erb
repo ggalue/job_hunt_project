@@ -1,9 +1,8 @@
-<h1 id="title"><strong>Your Saved Jobs</strong></h1>
-<h4 id="title">Your recently saved jobs are listed below. Click "View Listing" to make notes.</h4>
+<h1 id="title"><strong>Saved Jobs</strong></h1>
+<h4 id="title">Your recently saved jobs are listed below. Click "View Listing" to make notes on a specific job post.</h4>
 &nbsp
-
   <% @my_jobs.each do |job| %>
-  <div class="col-md-12">                            
+  <div class="col-md-10">                            
   <table class="table table-hover">
     <tbody>
       <tr>
@@ -11,27 +10,20 @@
         	<h4><%= job.job_title %></h4>
         	<h5><%= job.company %> - <%= job.location %></h5>
         </td>
-        <td>
-        	<%= link_to 'View Listing', show_path(id: job.id), class: "btn btn-sm btn-info" %>
-        	<%= link_to 'Delete Job', destroy_path(id: job.id), data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+        <td class="pull-right">
+        	<%= link_to show_path(id: job.id) do %>
+          <button class="btn btn-sm btn-info"><i class="fa fa-plus fa-fw"></i>View Listing</button>
+          <% end %>
+          <%= link_to destroy_path(id: job.id), data: { confirm: 'Are you sure?' } do %>
+          <button class="btn btn-sm btn-danger"><i class="fa fa-trash fa-fw"></i>Delete Job</button>
+          <% end %>
         </td>
       </tr>
       <% end %>
     </tbody>
-    </div>
   </table>
+</div>
 
 <div class="container">
   <p id="height"></p>
 </div>
-
-
-
-
-
-
-
-
-
-
-

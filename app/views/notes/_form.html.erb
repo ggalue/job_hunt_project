@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :comment %>
     <%= f.input :date %>
-    <%= f.input :status %>
+    <%= f.input :status, collection: Note::STATUS, prompt: "- Select status" %>
   </div>
     
     <div class="field">

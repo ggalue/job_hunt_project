@@ -33,11 +33,16 @@
 	<% @job.notes.each do |note| %>
 	<div class="col-md-4">
 		<div class="well">
-		<p><%= note.name %></p>
-		<p><%= note.comment %></p>
-		<p><%= note.date %></p>
-		<p><%= note.status %></p>
-		<%= link_to 'Edit', edit_note_path(note) %>
+		<h3><strong><%= note.name %></strong></h4>
+		<h5><strong>Comment:</strong> <%= note.comment %></h5>
+		<h5><strong>Date:</strong> <%= note.date %></h5>
+		<h5><strong>Status:</strong> <%= note.status %></h5>
+		<%=link_to edit_note_path(note) do %>
+    <span><i class="fa fa-pencil fa-fw"></i> Edit Note</span>
+    <% end %>
+    <%=link_to note, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <span class="pull-right"><i class="fa fa-trash fa-fw"></i> Delete Note</span>
+    <% end %>
 	</div>
 </div>
 <% end %>

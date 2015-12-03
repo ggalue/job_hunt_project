@@ -11,9 +11,8 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
                                     
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -41,7 +40,7 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
         </li>
         <% if user_signed_in? %>
          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-fw"></i>Your Account<span class="fa fa-caret-down"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-fw"></i>Your Account <span class="fa fa-caret-down"></span></a>
           <ul class="dropdown-menu">
             <li>
               <%= link_to show_user_path(current_user) do %>
@@ -81,7 +80,23 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
 	<%= yield %>
 
 <div class="footer">
-  <p> &copy; Geraldine Galue 2015</p>
+  <div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <h3>JobHunt</h3>
+    <p>Optimize your job search</p>
+    <p> &copy; Copyright 2015</p>
+  </div>
+  <div class="col-md-3 col-md-offset-1">
+    <h3>CONTACT US</h3>
+    <p>1-(844)-555-HUNT</p>
+    <p>support@jobhunt.com</p>
+  </div>
+  <div class="col-md-3 col-md-offset-1">
+    <h3>FOLLOW US</h3>
+    <p>Visit us on social media!</p>
+    <h4><i class="fa fa-facebook-square"></i>  <i class="fa fa-twitter-square"></i>  <i class="fa fa-instagram"></i></h4>
+  </div>
+</div>
 </div>
 
 

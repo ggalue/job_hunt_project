@@ -43,7 +43,8 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
+        @job = Job.find(@note.job_id)
+        format.html { redirect_to show_path(id: @job.id), notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }
@@ -57,7 +58,8 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
+      @job = Job.find(@note.job_id)
+      format.html { redirect_to show_path(id: @job.id), notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +68,7 @@ class NotesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = Note.find(params[:id])
+      @job = Job.find(@note.job_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
