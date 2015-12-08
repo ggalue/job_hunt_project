@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :notes
   devise_for :users
   root 'welcome#index'
 
   get 'about' => 'welcome#about'
-
-  get 'contact' => 'welcome#contact'
 
   get 'search_job' => 'job#index'
 
@@ -19,6 +21,10 @@ Rails.application.routes.draw do
   get 'show' => 'job#show'
 
   get 'destroy' => 'job#destroy'
+
+  get "/auth/:provider/callback" => "sessions#create"
+  
+  get "/signout" => "sessions#destroy", :as => :signout
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -73,7 +73,6 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
              <%end%>
            </ul>
       </ul>
-       <!-- <li><%= link_to "Contact", contact_path %></li> -->
 </div>
 </nav>
 
@@ -98,6 +97,16 @@ src="http://gdc.indeed.com/ads/apiresults.js"></script>
   </div>
 </div>
 </div>
+
+<!-- <div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!<br />
+    <%= image_tag(current_user.normalimage) %><br />
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div> -->
 
 
 

@@ -23,6 +23,7 @@ class JobController < ApplicationController
 		job.description = params[:s]
 		job.url = params[:url]
 		job.date = params[:date]
+		job.job_key = params[:key]
 		job.user_id = current_user.id
 		job.save
 

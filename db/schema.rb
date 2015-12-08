@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203014439) do
+ActiveRecord::Schema.define(version: 20151203153450) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "job_title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151203014439) do
     t.integer  "job_id"
     t.string   "url"
     t.datetime "date"
+    t.string   "job_key"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -58,6 +59,8 @@ ActiveRecord::Schema.define(version: 20151203014439) do
     t.datetime "avatar_updated_at"
     t.text     "saved_jobs"
     t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
